@@ -21,7 +21,7 @@ const persistConfig = {
   key: "root",
   storage: storage,
   blacklist: [],
-  whitelist: ['EXPENSE']
+  whitelist: ["EXPENSE"],
 };
 
 // 3 - Persist the reducers
