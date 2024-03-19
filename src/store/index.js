@@ -11,6 +11,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { loggerMiddleaware } from "./middlewares/logger-middleware";
 // To persist data
 // 1 - Combine the reducers (slices content) into a single reducer
 const rootReducer = combineReducers({
@@ -20,8 +21,8 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: "root",
   storage: storage,
-  blacklist: [],
-  whitelist: ["EXPENSE"],
+  // blacklist: ["EXPENSE"],
+  // whitelist: ["EXPENSE"],
 };
 
 // 3 - Persist the reducers
@@ -35,7 +36,7 @@ const store = configureStore({
       serializableCheck: {
         ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).prepend(loggerMiddleaware.middleware),
 });
 
 // 5 - Create a persisted version of the store
