@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const expenseSlice = createSlice({
   name: "expenseSlice",
   initialState: {
-    expenseList: [{ name: "Apple", price: 1.23 }],
+    expenseList: []
   },
   reducers: {
     addExpenseAction: (currentSlice, action) => {
