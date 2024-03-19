@@ -8,7 +8,7 @@ import { Logo } from "components/Logo/Logo";
 // import "react-circular-progressbar/dist/styles.css";
 
 export function App() {
-  const percentage = 6;
+  // const percentage = 6;
 
   return (
     <div className={s.main_container}>
